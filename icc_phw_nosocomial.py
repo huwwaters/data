@@ -56,4 +56,7 @@ def calc_pc(df):
 
 df['pc'] = df.apply(calc_pc, axis=1)
 
+df.sort_values(by=['healthboard', 'date'],
+               ascending=[True, True], inplace=True)
+
 df.to_csv('hb.csv', index=False)
